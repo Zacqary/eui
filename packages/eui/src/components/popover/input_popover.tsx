@@ -144,7 +144,7 @@ export const EuiInputPopover: FunctionComponent<EuiInputPopoverProps> = ({
           if (!ownFocus) {
             closePopover();
           }
-        } else {
+        } else if (!event.shiftKey) {
           const tabbableItems = tabbable(event.currentTarget).filter(
             (el) => !el.hasAttribute('data-focus-guard')
           );
